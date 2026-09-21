@@ -9,8 +9,8 @@ import { NewDiaryEntryDialog } from "@/components/diary/new-diary-entry-dialog";
 /**
  * The single quick-capture bar at the very top of Home — training, food,
  * todos, and diary, in one row. "Todo" reuses the existing global Cmd+K
- * modal (same synthetic-keydown dispatch as QuickAddTrigger) rather than a
- * second task-creation UI.
+ * modal (dispatches the same synthetic keydown it listens for) rather than
+ * a second task-creation UI.
  */
 export function QuickAddBar({ today }: { today: string }) {
   return (

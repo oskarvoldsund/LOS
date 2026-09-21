@@ -4,7 +4,6 @@ import { PRIMARY_NAV, SECONDARY_NAV } from "@/lib/nav";
 import { SidebarNav } from "@/components/shell/sidebar-nav";
 import { UserMenu } from "@/components/shell/user-menu";
 import { QuickAdd } from "@/components/shell/quick-add";
-import { QuickAddTrigger } from "@/components/shell/quick-add-trigger";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -24,8 +23,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex h-14 shrink-0 items-center justify-between border-b px-4">
-          <QuickAddTrigger />
+        <header className="flex h-14 shrink-0 items-center justify-end border-b px-4">
           <UserMenu email={user.email ?? ""} />
         </header>
         <main className="flex-1 overflow-y-auto px-4 py-6 md:px-8">{children}</main>
